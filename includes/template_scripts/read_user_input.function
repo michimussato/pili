@@ -1,0 +1,71 @@
+#!/bin/bash
+
+
+############################################################################
+# pili (c)by Michael Mussato                                               #
+# michimussato@gmail.com                                                   #
+# reel: https://www.dropbox.com/s/dxem0hl677fiapi/current_reelCut_h264.mov #
+############################################################################
+
+
+#current_directory="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
+#cd ${current_directory};
+	
+
+	
+function read_user_input {
+	
+	LC_CTYPE=ISO-8859-1;
+
+	read user_input;
+	
+	
+	user_input=$(printf "${user_input}" | \
+		sed -e 's/€/Ae/g' | \
+		sed -e 's/Š/ae/g' | \
+		sed -e 's/…/Oe/g' | \
+		sed -e 's/š/oe/g' | \
+		sed -e 's/†/Ue/g' | \
+		sed -e 's/Ÿ/ue/g' | \
+		sed -e 's/§/ss/g' | \
+		sed -e 's/[.,:;\"-\" ]//g' | \
+		sed -e 's/__/_/g');
+
+
+	while [[ "${user_input}" == "" ]]; do
+	#while [[ "${user_input}" == "" ]]; do
+		printf "No name given...\n";
+		printf "(q to abort)\n";
+		printf "${o_choice:0:3}_";
+		read user_input;
+		user_input=$(printf "${user_input}" | \
+			sed -e 's/€/Ae/g' | \
+			sed -e 's/Š/ae/g' | \
+			sed -e 's/…/Oe/g' | \
+			sed -e 's/š/oe/g' | \
+			sed -e 's/†/Ue/g' | \
+			sed -e 's/Ÿ/ue/g' | \
+			sed -e 's/§/ss/g' | \
+			sed -e 's/[.,:;\"-\" ]//g' | \
+			sed -e 's/__/_/g');
+
+	done;
+	
+	while [[ "${user_input}" == "_" ]]; do
+	
+		printf "fuck you\n";
+		
+	done;
+	
+	#return ${user_input};
+	printf ${user_input};
+	
+	LC_CTYPE=UTF-8;
+	
+}
+
+
+#o_name=$(read_user_input);
+
+#printf "${o_name}\n";
+

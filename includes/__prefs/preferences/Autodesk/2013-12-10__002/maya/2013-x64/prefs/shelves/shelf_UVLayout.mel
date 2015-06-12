@@ -1,0 +1,95 @@
+global proc shelf_UVLayout () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -align "center" 
+        -label "UVLayout" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -image "uvlayout-info.xpm" 
+        -image1 "uvlayout-info.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "uvlayout_open;\n" 
+        -sourceType "mel" 
+        -actionIsSubstitute 0
+    ;
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -align "center" 
+        -label "Run" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -image "uvlayout-run.xpm" 
+        -image1 "uvlayout-run.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "uvlayout_run;\n" 
+        -sourceType "mel" 
+        -actionIsSubstitute 0
+    ;
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -align "center" 
+        -label "Send" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -image "uvlayout-send.xpm" 
+        -image1 "uvlayout-send.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "uvlayout_send;\n" 
+        -sourceType "mel" 
+        -actionIsSubstitute 0
+    ;
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -align "center" 
+        -label "Stop" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -image "uvlayout-stop.xpm" 
+        -image1 "uvlayout-stop.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "uvlayout_stop;\n" 
+        -sourceType "mel" 
+        -actionIsSubstitute 0
+    ;
+
+} 

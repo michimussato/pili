@@ -1,0 +1,23 @@
+//Maya Preference 2013 (Release 1)
+//
+//
+windowPref -topLeftCorner 11 -472 -widthHeight 456 772 outlinerPanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 700 400 hyperGraphPanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 660 400 graphEditor1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 660 400 dopeSheetPanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 660 400 clipEditorPanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 524 470 devicePanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 700 400 hyperShadePanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 700 400 dynPaintScriptedPanelWindow;
+windowPref -topLeftCorner 250 200 -widthHeight 550 562 blindDataEditor1Window;
+windowPref -topLeftCorner 22 0 -widthHeight 1920 1156 MayaWindow;
+windowPref -topLeftCorner 210 390 -widthHeight 665 500 PreferencesWindow;
+windowPref -topLeftCorner 76 1106 -widthHeight 546 350 OptionBoxWindow;
+windowPref -topLeftCorner 414 640 -widthHeight 540 545 learningMoviesLaunchWnd;
+windowPref -topLeftCorner 230 1165 -widthHeight 475 325 scriptEditorPanel1Window;
+windowPref -topLeftCorner 72 50 -widthHeight 516 760 DeadlineSubmitWindow;
+windowPref -topLeftCorner 414 640 -widthHeight 324 598 win_NE_0;
+windowPref -topLeftCorner 414 640 -widthHeight 324 598 win_SE_0;
+windowPref -topLeftCorner 427 1444 -widthHeight 324 598 win_NW_0;
+windowPref -topLeftCorner 116 -565 -widthHeight 385 697 MMEditorWnd_CommonModelingPanes;
+windowPref -topLeftCorner 247 -1151 -widthHeight 500 500 markingMenuEditorWnd;

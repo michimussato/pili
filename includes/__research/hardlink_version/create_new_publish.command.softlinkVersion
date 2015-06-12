@@ -1,0 +1,77 @@
+#!/bin/bash
+
+
+############################################################################
+# pili (c)by Michael Mussato                                               #
+# michimussato@gmail.com                                                   #
+# reel: https://www.dropbox.com/s/dxem0hl677fiapi/current_reelCut_h264.mov #
+############################################################################
+
+
+#create_new_publish.command.template
+
+current_directory="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
+cd ${current_directory};
+
+source ${current_directory}/conf/config.p_conf;
+
+clear;
+
+printf "Publish new output contents\n";
+printf "\n";
+
+cd "${this_p_location}/assets/";
+
+printf "Select Asset\n";
+
+select asset in $(ls -d */ | sed -e 's/lib\///g' | sed -e 's/\///g');
+do
+	printf "\n";
+	if [[ "${asset}" != "q" ]]; then
+		printf "Select Task\n";
+		cd "${this_p_location}/assets/${asset}/";
+		select task in $(ls -d */ | sed -e 's/lib\///g' | sed -e 's/\///g');
+		do
+			if [[ "${task}" != "q" ]]; then
+				cd "${this_p_location}/assets/${asset}/${task}/output";
+				printf "\n";
+				printf "Select Output\n";
+				select output in $(ls -d */ | sed -e 's/lib\///g' | sed -e 's/\///g');
+				do
+					
+					if [[ "${output}" != "q" ]]; then
+						
+						latest_output=$(ls -t "${this_p_location}/assets/${asset}/${task}/output/${output}/" | head -1);
+						
+						if [ ! -z "$(ls ${this_p_location}/assets/${asset}/${task}/lib/)" ]; then
+						
+    						last_publish=$(ls -t "${this_p_location}/assets/${asset}/${task}/lib" | grep -v current | head -1);
+    						
+							mkdir -p "${this_p_location}/assets/${asset}/${task}/lib/${latest_output}/${output}/"
+							#cp -r ${this_p_location}/assets/${asset}/${task}/lib/${last_publish}/* "${this_p_location}/assets/${asset}/${task}/lib/${latest_output}/";
+							#cp -r ${this_p_location}/assets/${asset}/${task}/output/${output}/${latest_output}/* "${this_p_location}/assets/${asset}/${task}/lib/${latest_output}/${output}/";
+							rsync -rvh ${this_p_location}/assets/${asset}/${task}/lib/${last_publish}/. "${this_p_location}/assets/${asset}/${task}/lib/${latest_output}/" --progress;
+							rsync -rvh ${this_p_location}/assets/${asset}/${task}/output/${output}/${latest_output}/. "${this_p_location}/assets/${asset}/${task}/lib/${latest_output}/${output}/" --progress;
+							#rm "${this_p_location}/assets/${asset}/${task}/lib/current";
+							#ln -s "${this_p_location}/assets/${asset}/${task}/lib/${latest_output}/" "${this_p_location}/assets/${asset}/${task}/lib/current";
+							ln -sfn "${this_p_location}/assets/${asset}/${task}/lib/${latest_output}/" "${this_p_location}/assets/${asset}/${task}/lib/current";
+							
+						else
+							mkdir -p "${this_p_location}/assets/${asset}/${task}/lib/${latest_output}/${output}/";
+							#cp -r ${this_p_location}/assets/${asset}/${task}/output/${output}/${latest_output}/* "${this_p_location}/assets/${asset}/${task}/lib/${latest_output}/${output}/";
+							rsync -rvh ${this_p_location}/assets/${asset}/${task}/output/${output}/${latest_output}/. "${this_p_location}/assets/${asset}/${task}/lib/${latest_output}/${output}/" --progress;
+							ln -sfn "${this_p_location}/assets/${asset}/${task}/lib/${latest_output}/" "${this_p_location}/assets/${asset}/${task}/lib/current";
+						fi;
+						
+						ln -sfn "${this_p_location}/scripts/create_asset_output.command" "${this_p_location}/assets/${asset}/Create Asset Output";
+						
+						exit;
+					fi
+				done;
+				exit;
+			fi;
+		done;
+	fi;
+done;
+
+exit;

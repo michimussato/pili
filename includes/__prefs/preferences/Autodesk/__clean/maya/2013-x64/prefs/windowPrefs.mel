@@ -1,0 +1,14 @@
+//Maya Preference 2013 (Release 1)
+//
+//
+windowPref -topLeftCorner 225 150 -widthHeight 250 400 outlinerPanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 700 400 hyperGraphPanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 660 400 graphEditor1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 660 400 dopeSheetPanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 660 400 clipEditorPanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 524 470 devicePanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 700 400 hyperShadePanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 700 400 dynPaintScriptedPanelWindow;
+windowPref -topLeftCorner 250 200 -widthHeight 550 562 blindDataEditor1Window;
+windowPref -topLeftCorner 414 640 -widthHeight 540 545 learningMoviesLaunchWnd;
+windowPref -topLeftCorner 33 9 -widthHeight 1262 982 MayaWindow;

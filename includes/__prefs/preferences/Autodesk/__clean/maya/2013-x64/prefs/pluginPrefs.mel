@@ -1,0 +1,22 @@
+//Maya Preference 2013 (Release 1)
+//
+//
+evalDeferred("autoLoadPlugin(\"\", \"OpenEXRLoader\", \"OpenEXRLoader\")");
+evalDeferred("autoLoadPlugin(\"\", \"DirectConnect\", \"DirectConnect\")");
+evalDeferred("autoLoadPlugin(\"\", \"AbcImport\", \"AbcImport\")");
+evalDeferred("autoLoadPlugin(\"\", \"mayaHIK\", \"mayaHIK\")");
+evalDeferred("autoLoadPlugin(\"\", \"Mayatomr\", \"Mayatomr\")");
+evalDeferred("autoLoadPlugin(\"\", \"ikSpringSolver\", \"ikSpringSolver\")");
+evalDeferred("autoLoadPlugin(\"\", \"tiffFloatReader\", \"tiffFloatReader\")");
+evalDeferred("autoLoadPlugin(\"\", \"AbcExport\", \"AbcExport\")");
+evalDeferred("autoLoadPlugin(\"\", \"VectorRender\", \"VectorRender\")");
+evalDeferred("autoLoadPlugin(\"\", \"quatNodes\", \"quatNodes\")");
+evalDeferred("autoLoadPlugin(\"\", \"gpuCache\", \"gpuCache\")");
+evalDeferred("autoLoadPlugin(\"\", \"mayaCharacterization\", \"mayaCharacterization\")");
+evalDeferred("autoLoadPlugin(\"\", \"rotateHelper\", \"rotateHelper\")");
+evalDeferred("autoLoadPlugin(\"\", \"MayaMuscle\", \"MayaMuscle\")");
+evalDeferred("autoLoadPlugin(\"\", \"Substance\", \"Substance\")");
+evalDeferred("autoLoadPlugin(\"\", \"OneClick\", \"OneClick\")");
+evalDeferred("autoLoadPlugin(\"\", \"matrixNodes\", \"matrixNodes\")");
+evalDeferred("autoLoadPlugin(\"\", \"fbxmaya\", \"fbxmaya\")");
+evalDeferred("autoLoadPlugin(\"\", \"ik2Bsolver\", \"ik2Bsolver\")");

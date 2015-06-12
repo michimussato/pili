@@ -1,0 +1,16 @@
+MDL__Modelling
+CAM__Camera
+LIT__Lighting
+SHD__Shading
+ANM__Animation
+SIM__Simulation
+RND__Rendering
+TEX__Texturing
+SPT__Sculpting
+RIG__Rigging
+CMP__Compositing
+FUR__FurHair
+CUT__Cutting
+TRK__Tracking
+SKN__Skinning
+FRD__FileReader

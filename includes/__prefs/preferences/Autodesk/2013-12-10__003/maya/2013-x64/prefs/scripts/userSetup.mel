@@ -1,0 +1,12 @@
+// userSetup.mel
+
+// comet Scripts: http://www.comet-cartoons.com/melscript.php 
+source "cometRename.mel";
+source "cometJointOrient.mel";
+source "cometMirrorMesh.mel";
+
+// deadlineSubmitter
+source "InitDeadlineSubmitter.mel";  
+
+// sag_instancerToGeometry
+// source "sag_instancerToGeometry.py";

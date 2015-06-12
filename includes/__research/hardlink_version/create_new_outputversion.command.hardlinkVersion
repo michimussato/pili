@@ -1,0 +1,71 @@
+#!/bin/bash
+
+
+############################################################################
+# pili (c)by Michael Mussato                                               #
+# michimussato@gmail.com                                                   #
+# reel: https://www.dropbox.com/s/dxem0hl677fiapi/current_reelCut_h264.mov #
+############################################################################
+
+
+#create_new_outputversion.command.template
+
+current_directory="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
+cd ${current_directory};
+
+source ${current_directory}/conf/config.p_conf;
+
+time_stamp=`date +"%Y-%m-%d_%H%M-%S"`;
+
+clear;
+
+printf "Create new Output version\n";
+printf "\n";
+
+cd "${this_p_location}/assets/";
+
+printf "Select Asset\n";
+
+select asset in $(ls -d */ | sed -e 's/lib\///g' | sed -e 's/\///g');
+do
+	if [[ "${asset}" != "q" ]]; then
+		cd "${this_p_location}/assets/${asset}/";
+		printf "\n";
+		printf "Select Task\n";
+		select task in $(ls -d */ | sed -e 's/lib\///g' | sed -e 's/\///g');
+		do
+			printf "\n";
+			if [[ "${task}" != "q" ]]; then
+				cd "${this_p_location}/assets/${asset}/${task}/output";
+				printf "\n";
+				printf "Select Output\n";
+				select output in $(ls -d */ | sed -e 's/lib\///g' | sed -e 's/\///g');
+				do
+					if [[ "${output}" != "q" ]]; then
+						printf "\n";
+						printf "Select Output\n";
+						if [ ! -z "$(ls ${this_p_location}/assets/${asset}/${task}/output/${output})" ]; then
+							last_outputversion=$(ls -t "${this_p_location}/assets/${asset}/${task}/output/${output}" | grep -v current | head -1);
+							mkdir -p "${this_p_location}/assets/${asset}/${task}/output/${output}/${time_stamp}/outputset";
+							#cp -r "${this_p_location}/assets/${asset}/${task}/output/${output}/${last_outputversion}/*" "${this_p_location}/assets/${asset}/${task}/output/${output}/${time_stamp}";
+							#exit;
+							# hardlink version
+							hardlink -u "${this_p_location}/assets/${asset}/${task}/output/${output}/current";
+							hardlink "${this_p_location}/assets/${asset}/${task}/output/${output}/${time_stamp}/outputset" "${this_p_location}/assets/${asset}/${task}/output/${output}/current";
+							exit;
+						else
+							mkdir -p "${this_p_location}/assets/${asset}/${task}/output/${output}/${time_stamp}/outputset";
+							#exit;
+							# hardlink version
+							hardlink "${this_p_location}/assets/${asset}/${task}/output/${output}/${time_stamp}/outputset" "${this_p_location}/assets/${asset}/${task}/output/${output}/current";
+							exit;
+						fi;
+					fi
+				done;
+				exit;
+			fi;
+		done;	
+	fi;
+done;
+
+exit;
