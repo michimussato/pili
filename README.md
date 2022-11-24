@@ -1,2 +1,2 @@
 # pili-pipeline
-![Home](includes/Spaghetti.png)
+![pili](includes/spaghetti.png)
